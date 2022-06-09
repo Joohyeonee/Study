@@ -1,5 +1,5 @@
-APP_NAME = helloWorld
-MODEL_VOLUME = /home/jhlee/workspace/helloWorld:/workspace/Study
+APP_NAME = helloworld
+MODEL_VOLUME = /home/jhlee/workspace/helloworld:/workspace/Study
 
 # Build and run the container
 build:

@@ -126,7 +126,7 @@ for i in range(16):
     plt.imshow(real_samples[i].reshape(28, 28), cmap="gray_r")
     plt.xticks([])
     plt.yticks([])
-
+ 
 class Discriminator(nn.Module):
     def __init__(self):
         super().__init__()

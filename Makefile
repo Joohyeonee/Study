@@ -1,6 +1,6 @@
 APP_NAME = helloworld
 MODEL_VOLUME = /home/jhlee/workspace/helloworld:/workspace/Study
-
+ 
 # Build and run the container
 build:
 	@echo 'build docker $(APP_NAME)'

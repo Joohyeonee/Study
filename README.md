@@ -17,6 +17,25 @@
 - 볼륨 마운트 : -v [호스트 경로]:[컨테이너 경로]
 > -v /home/jhlee/workspace/metadata:/workspace/metadata_jhlee
 
+## Python 정리
+1. json 로드
+ - json.loads() : string을 가져올 때
+ ```
+ data = {"info:"01", "file_name":"2020-06-25.mp4"}
+ j = json.loads(data)
+ ```
+ -json.load() : json 파일을 가져올 때
+ ```
+ with open("jsondata.json", "w", encoding="utf-8") as json_file:
+ j = json.load(json_file)
+ ```
+ - json_object.get() : 중첩된 object의 value를 읽을 때
+ ```
+ json_file = open(path, 'r', encoding = 'utf-8')
+ json_object = json.loads(json_file.reaad())
+ value = json_object.get("key")
+ ```
+ 
 ## Pytorch 개념 정리
 1. Tensor
  - 배열, 행렬과 유사한 자료구조로, 연산을 가속화하기 위해 사용

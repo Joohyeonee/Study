@@ -24,7 +24,7 @@
  data = {"info:"01", "file_name":"2020-06-25.mp4"}
  j = json.loads(data)
  ```
- -json.load() : json 파일을 가져올 때
+ - json.load() : json 파일을 가져올 때
  ```
  with open("jsondata.json", "w", encoding="utf-8") as json_file:
  j = json.load(json_file)

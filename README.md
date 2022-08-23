@@ -14,6 +14,8 @@
 - 터미널에서 컨테이너 접속 : docker attach [컨테이너명]
 - 컨테이너를 이미지로 만들기 : docker commit [현재 컨테이너명] [만들 이미지명]
 - 실행된 프로세스에 접근 : docker exec -it [컨테이너명] /bin/bash
+- 볼륨 마운트 : -v [호스트 경로]:[컨테이너 경로]
+> -v /home/jhlee/workspace/metadata:/workspace/metadata_jhlee
 
 ## Pytorch 개념 정리
 1. Tensor

@@ -37,6 +37,14 @@
  json_object = json.loads(json_file.reaad())
  value = json_object.get("key")
  ```
+
+2. 자료형
+- Dictionary : {key : value} 쌍을 가지는 자료형 ex> {"gender" : "male"}
+>> - 추가 : 딕셔너리명["key"] = "value"
+>> - 삭제 : del 딕셔너리명["key"]
+>> - key값만 리스트로 불러오기 : list(딕셔너리명.keys())
+>> - key로 value 얻기 : 딕셔너리명.get("key")
+>> - key값이 중복되면 하나를 제외한 나머지가 무시됨
  
 ## Pytorch 개념 정리
 1. Tensor
@@ -48,22 +56,14 @@
  - torch.nn.DataParallel을 통해 GPGPU 지원
  - Define and Run 방식 : 연산 그래프를 만듦과 동시에 값 할당
  
-2. 자료형
- - Dictionary : {key : value} 쌍을 가지는 자료형 ex> {"gender" : "male"}
- >> - 추가 : 딕셔너리명["key"] = "value"
- >> - 삭제 : del 딕셔너리명["key"]
- >> - key값만 리스트로 불러오기 : list(딕셔너리명.keys())
- >> - key로 value 얻기 : 딕셔너리명.get("key")
- >> - key값이 중복되면 하나를 제외한 나머지가 무시됨
- 
- ## OpenCV 함수 정리
-  - 이미지 읽기 : img = cv2.imread(filename)
-  - 이미지 띄우기 : cv2.imshow(filename, cv2.IMREAD_COLOR)
-  - 이미지 파일로 저장하기 : cv2.imwrite(filename, img)
-  - 이미지 크기 변경 : img_res = cv2.resize(img, (width, height))
-  - 비디오 프레임 캡쳐 : cap = cv2.VideoCapture(filepath)
-  - 속성값
-  >> - cv2.CAP_PROP_FRAME_WIDTH : 프레임 폭
-  >> - cv2.CAP_PROP_FRAME_HEIGHT : 프레임 높이
-  >> - cv2.CAP_PROP_FPS : 초당 프레임 수
-  >> - cv2.CAP_PROP_FRAME_COUNT : video의 전체 프레임 개수
+## OpenCV 함수 정리
+ - 이미지 읽기 : img = cv2.imread(filename)
+ - 이미지 띄우기 : cv2.imshow(filename, cv2.IMREAD_COLOR)
+ - 이미지 파일로 저장하기 : cv2.imwrite(filename, img)
+ - 이미지 크기 변경 : img_res = cv2.resize(img, (width, height))
+ - 비디오 프레임 캡쳐 : cap = cv2.VideoCapture(filepath)
+ - 속성값
+ >> - cv2.CAP_PROP_FRAME_WIDTH : 프레임 폭
+ >> - cv2.CAP_PROP_FRAME_HEIGHT : 프레임 높이
+ >> - cv2.CAP_PROP_FPS : 초당 프레임 수
+ >> - cv2.CAP_PROP_FRAME_COUNT : video의 전체 프레임 개수

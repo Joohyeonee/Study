@@ -50,11 +50,11 @@
  
 2. 자료형
  - Dictionary : {key : value} 쌍을 가지는 자료형 ex> {"gender" : "male"}
- >> 추가 : 딕셔너리명["key"] = "value"
- >> 삭제 : del 딕셔너리명["key"]
- >> key값만 리스트로 불러오기 : list(딕셔너리명.keys())
- >> key로 value 얻기 : 딕셔너리명.get("key")
- >> key값이 중복되면 하나를 제외한 나머지가 무시됨
+ >> - 추가 : 딕셔너리명["key"] = "value"
+ >> - 삭제 : del 딕셔너리명["key"]
+ >> - key값만 리스트로 불러오기 : list(딕셔너리명.keys())
+ >> - key로 value 얻기 : 딕셔너리명.get("key")
+ >> - key값이 중복되면 하나를 제외한 나머지가 무시됨
  
  ## OpenCV 함수 정리
   - 이미지 읽기 : img = cv2.imread(filename)
@@ -63,7 +63,7 @@
   - 이미지 크기 변경 : img_res = cv2.resize(img, (width, height))
   - 비디오 프레임 캡쳐 : cap = cv2.VideoCapture(filepath)
   - 속성값
-  >> cv2.CAP_PROP_FRAME_WIDTH : 프레임 폭
-  >> cv2.CAP_PROP_FRAME_HEIGHT : 프레임 높이
-  >> cv2.CAP_PROP_FPS : 초당 프레임 수
-  >> cv2.CAP_PROP_FRAME_COUNT : video의 전체 프레임 개수
+  >> - cv2.CAP_PROP_FRAME_WIDTH : 프레임 폭
+  >> - cv2.CAP_PROP_FRAME_HEIGHT : 프레임 높이
+  >> - cv2.CAP_PROP_FPS : 초당 프레임 수
+  >> - cv2.CAP_PROP_FRAME_COUNT : video의 전체 프레임 개수

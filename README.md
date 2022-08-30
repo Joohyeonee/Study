@@ -56,7 +56,7 @@
  - torch.nn.DataParallel을 통해 GPGPU 지원
  - Define and Run 방식 : 연산 그래프를 만듦과 동시에 값 할당
  
-##pandas 사용법 정리
+## pandas 사용법 정리
  - dataframe 값을 리스트로 저장 : df.values.tolist()
  - 기존 csv 이어쓰기 : to_csv([저장할 파일명], mode = 'a', header = 'False')
  ```

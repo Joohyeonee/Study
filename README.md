@@ -11,9 +11,11 @@
 
 
 ## docker 명령어 정리
-- 터미널에서 컨테이너 접속 : docker attach [컨테이너명]
+- 컨테이너 실행 : docker start [컨테이너명]
+- 컨테이너 종료 : docker stop [컨테이너명]
+- 터미널에서 컨테이너 접속 : docker attach [컨테이너명] -> attach의 bash가 고장나는 경우 작동되지 않을 수 있음
 - 컨테이너를 이미지로 만들기 : docker commit [현재 컨테이너명] [만들 이미지명]
-- 실행된 프로세스에 접근 : docker exec -it [컨테이너명] /bin/bash
+- 실행된 프로세스에 접근 : docker exec -it [컨테이너명] /bin/bash -> 되도록이면 이걸로 사용
 - 백그라운드에서 컨테이너 실행 : docker run -d
 - 유사 터미널(실제 터미널 x) 할당 : docker run -t
 - 볼륨 마운트 : -v [호스트 경로]:[컨테이너 경로]

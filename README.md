@@ -82,39 +82,59 @@
  >> - cv2.CAP_PROP_FRAME_COUNT : video의 전체 프레임 개수
  
  ## C++ Smart Pointer
-  - Pointer 메모리 해제 : 사용되지 않는 리소스를 자동으로 해제하는 Garbage Collecter 기능이 없기 때문에 메모리 누수 발생
-  - smart pointer : 가리키고 있는 대상에 대해 소멸자가 자동으로 delete를 호출하도록 설계된 객체
-  - unique_ptr : 이미 해제된 메모리를 다시 참조하는 경우 이미 소멸된 객체를 소멸하려고 할 때 메모리 에러 발생 ->  특정 객체에 유일한 소유권을 부여하여 해결
+  >> - Pointer 메모리 해제 : 사용되지 않는 리소스를 자동으로 해제하는 Garbage Collecter 기능이 없기 때문에 메모리 누수 발생
+  >> - smart pointer : 가리키고 있는 대상에 대해 소멸자가 자동으로 delete를 호출하도록 설계된 객체
+  - unique_ptr : 이미 해제된 메모리를 다시 참조하는 경우 이미 소멸된 객체를 소멸하려고 할 때 메모리 에러 발생 -> 특정 객체에 유일한 소유권을 부여하여 해결
   ```
   #include <iostream>
- 
-class Resource {
-    int* data;
- 
-public:
-    Resource() {
-        data = new int[100];
-        std::cout << "리소스 획득\n";
-    }
- 
-    ~Resource() {
-        std::cout << "소멸자 호출\n";
-        delete[] data;
-    }
- 
-    void do_something() {
-        std::cout << "Do something\n";
-    }
-};
- 
-void f() {
-    std::unique_ptr<Resource> pRsc(new Resource());
-    pRsc->do_something();
-}
- 
-int main(void) {
-    f();
- 
-    return 0;
-}
-```
+  using namespace std;
+
+ int main()
+ {
+	 //Unique Pointer 초기화와 함께 int형 값 10으로 동적할당
+	 unique_ptr<int> ptr1(new int(10));
+	
+ 	//auto 키워드로 ptr2는 ptr1의 타입을 추론해 받게된다.
+	 //move 키워드는 ptr1에서 ptr2로 메모리의 소유권을 이전하기 위해 사용된다.
+	 auto ptr2 = move(ptr1);
+
+	 //애초에 ptr1이 소멸되어 접근이 불가하다.
+	 //대입 연산자를 이용한 복사는 오류를 발생시킨다.
+	 unique_ptr<int> ptr3 = ptr1; // ERROR
+
+	 if (ptr1 == nullptr)
+	 {
+		 cout << "I'm Dead. Call ptr2 instead." << endl;
+		 cout << ptr1 << endl;
+	 }
+	 cout << *ptr2 << endl;
+
+	 //reset 함수로 메모리 영역을 삭제할 수 있다.
+	 ptr2.reset();
+	 ptr1.reset();
+	 return 0;
+ }
+ ```
+ - make_unique() : 파라미터를 통해 지정된 타입의 객체를 생성하고, 생성된 객체를 가리키는 unique_ptr을 반환
+ ```
+ #include <iostream>
+ using namespace std;
+
+ class Sample 
+ {
+ public:
+	 string name = "";
+	 Sample() { cout << "생성" << endl; }
+	 Sample(string _name) { name = _name; cout << "생성" << endl; }
+	 ~Sample() { cout << "소멸" << endl; }
+	 void HelloWorld() { cout << name <<" : Hello World!" << endl; }
+ };
+
+ int main()
+ {
+ 	//Sample 클래스 생성
+ 	unique_ptr<Sample> ptr_smpl = make_unique<Sample>("Sample Pointer");
+ 	ptr_smpl->HelloWorld();
+ 	return 0;
+ }
+ ```

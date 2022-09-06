@@ -80,3 +80,41 @@
  >> - cv2.CAP_PROP_FRAME_HEIGHT : 프레임 높이
  >> - cv2.CAP_PROP_FPS : 초당 프레임 수
  >> - cv2.CAP_PROP_FRAME_COUNT : video의 전체 프레임 개수
+ 
+ ## C++ Smart Pointer
+  - Pointer 메모리 해제 : 사용되지 않는 리소스를 자동으로 해제하는 Garbage Collecter 기능이 없기 때문에 메모리 누수 발생
+  - smart pointer : 가리키고 있는 대상에 대해 소멸자가 자동으로 delete를 호출하도록 설계된 객체
+  - unique_ptr : 이미 해제된 메모리를 다시 참조하는 경우 이미 소멸된 객체를 소멸하려고 할 때 메모리 에러 발생 ->  특정 객체에 유일한 소유권을 부여하여 해결
+  ```
+  #include <iostream>
+ 
+class Resource {
+    int* data;
+ 
+public:
+    Resource() {
+        data = new int[100];
+        std::cout << "리소스 획득\n";
+    }
+ 
+    ~Resource() {
+        std::cout << "소멸자 호출\n";
+        delete[] data;
+    }
+ 
+    void do_something() {
+        std::cout << "Do something\n";
+    }
+};
+ 
+void f() {
+    std::unique_ptr<Resource> pRsc(new Resource());
+    pRsc->do_something();
+}
+ 
+int main(void) {
+    f();
+ 
+    return 0;
+}
+```

@@ -138,3 +138,42 @@
  	return 0;
  }
  ```
+ - shared pointer : 하나의 특정 객체를 참조하는 스마트 포인터의 개수를 참조하는 포인터
+ ```
+ #include <iostream>
+ using namespace std;
+
+ int main()
+ {
+ 	 shared_ptr<double> ptr1(new double(123.456));
+	 cout << ptr1.use_count() << endl;
+	 auto ptr2(ptr1);
+	 cout << ptr2.use_count() << endl;
+	 auto ptr3(ptr2);
+	 cout << ptr3.use_count() << endl;
+	 return 0;
+ }
+ ```
+ - make_shared() : 파라미터를 통해 지정된 타입의 객체를 생성하고, 이를 가리키는 shared_ptr을 반환
+ ```
+ #include <iostream>
+ using namespace std;
+ 
+ class Monster { 
+ public:
+	 Monster() { cout << "생성" << endl; }
+	 ~Monster() { cout << "소멸" << endl; }
+ };
+
+ int main()
+ {
+	 shared_ptr<Monster> mst_ptr1 = make_shared<Monster>();
+	 cout << mst_ptr1.use_count() << endl;
+	 auto mst_ptr2 = mst_ptr1;
+	 cout << mst_ptr1.use_count() << endl;
+	 mst_ptr2.reset();
+	 cout << mst_ptr1.use_count() << endl;
+	 return 0;
+ }
+ ```
+ 

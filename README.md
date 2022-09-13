@@ -86,6 +86,46 @@
  ```
  ![deep copy](https://velog.velcdn.com/images%2Fkkamyang%2Fpost%2F965f60f9-27b7-4164-8310-6174d81fd4b7%2Fimage.png)
  
+ ```
+ //Shallow copy - java
+ @NoArgsConstructor
+ @AllArgsConstructor
+ @Getter
+ public class Menu implements Copyable<Menu> {
+
+   private String name;
+   private int price;
+   private Recipe recipe;
+
+   @Override
+   public Menu shallowCopy(Menu menu) {
+     Menu copyMenu = new Menu(menu.getName(), menu.getPrice(), menu.getRecipe());
+     return copyMenu;
+   }
+ }
+ 
+ //Deep copy - java
+ @NoArgsConstructor
+ @AllArgsConstructor
+ @Getter
+ @Setter
+ public class Menu implements Copyable<Menu> {
+
+   private String name;
+   private int price;
+   private Recipe recipe;
+
+   @Override
+   public Menu deepCopy(Menu menu) {
+     Menu copyMenu = new Menu();
+     copyMenu.setName(new String(menu.getName));
+     copyMenu.setPrice(menu.getPrice());
+     copyMenu.setRecipe(Recipe.deepCopy(menu.getRecipe));
+     return copyMenu;
+   }
+ }
+ ```
+ 
 ## Pytorch 라이브러리 정리
 1. Tensor
  - 배열, 행렬과 유사한 자료구조로, 연산을 가속화하기 위해 사용

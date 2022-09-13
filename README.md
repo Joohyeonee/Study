@@ -49,7 +49,44 @@
 >> - key로 value 얻기 : 딕셔너리명.get("key")
 >> - key값이 중복되면 하나를 제외한 나머지가 무시됨
  
-## Pytorch 개념 정리
+3. shallow copy vs deep copy
+ - shallow copy : 원본 객체를 바탕으로 새로운 객체를 생성한 뒤 내부 필드의 참조에 대해서는 원본 객체와 같은 필드의 참조를 바라보는 형태
+ - deep copy : 원본 객체의 타입을 바탕으로 새로운 객체를 생성한 뒤, 내부 필드가 참조하는 객체에 대해서도 새로운 객체를 만들어주는 방식
+ ```
+ #shallow
+ import copy
+
+ a = [1, 2, [3, 4]]
+ b = copy.copy(a)
+
+ b[2].append(5)
+
+ print(b)
+ -> [1, 2, [3, 4, 5]]
+ print(a)
+ -> [1, 2, [3, 4, 5]]
+ ``` 
+ ![shallow copy original](https://velog.velcdn.com/images%2Fkkamyang%2Fpost%2Ffcf0f80f-953e-4d92-bc05-909c39bce008%2Fimage.png)
+ ![shallow copy copying](https://velog.velcdn.com/images%2Fkkamyang%2Fpost%2Fae990d20-b588-4de7-92ac-7b23f0d70f89%2Fimage.png)
+ ![shallow copy result](https://velog.velcdn.com/images%2Fkkamyang%2Fpost%2Fb29011e0-abdd-4072-89fb-84d6d73eff25%2Fimage.png)
+ 
+ ```
+ #deep copy
+ import copy
+
+ a = [1, 2, [3, 4]]
+ b = copy.deepcopy(a)
+
+ b[2].append(5)
+
+ print(b)
+ -> [1, 2, [3, 4, 5]]
+ print(a)
+ -> [1, 2, [3, 4]]
+ ```
+ ![deep copy](https://velog.velcdn.com/images%2Fkkamyang%2Fpost%2F965f60f9-27b7-4164-8310-6174d81fd4b7%2Fimage.png)
+ 
+## Pytorch 라이브러리 정리
 1. Tensor
  - 배열, 행렬과 유사한 자료구조로, 연산을 가속화하기 위해 사용
  - 대부분 C++, CUDA(cuDNN)로 만들어짐
@@ -59,7 +96,7 @@
  - torch.nn.DataParallel을 통해 GPGPU 지원
  - Define and Run 방식 : 연산 그래프를 만듦과 동시에 값 할당
  
-## pandas 사용법 정리
+2. Pandas
  - dataframe 값을 리스트로 저장 : df.values.tolist()
  - 기존 csv 이어쓰기 : to_csv([저장할 파일명], mode = 'a', header = 'False')
  ```

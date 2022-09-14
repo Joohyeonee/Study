@@ -126,7 +126,7 @@
  }
  ```
  
-## Pytorch 라이브러리 정리
+## Python 라이브러리 정리
 1. Tensor
  - 배열, 행렬과 유사한 자료구조로, 연산을 가속화하기 위해 사용
  - 대부분 C++, CUDA(cuDNN)로 만들어짐
@@ -146,6 +146,7 @@
     else:
         data_df.to_csv('before_decoding.csv', index = False, mode = 'a', encoding = 'utf-8', header = False)
  ```
+ - 특정 조건을 만족하는 값 저장 : df[df['컬럼명'] == '조건'] 
  
 ## OpenCV 함수 정리
  - 이미지 읽기 : img = cv2.imread(filename)

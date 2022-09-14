@@ -27,9 +27,8 @@ def type_search(filepath):
         for j in range(len(var)):
             if (df[column_list[i]] == var[j]).any():
                 if i == j:
-                    new_df = df[df[column_list[i]] == var[j]]
-                    new_df1 = new_df.drop(new_df.index[0])
-                    print(new_df)
+                    search_df.append(df[df[column_list[i]] == var[j]])
+    print(search_df)
                 
 
 def main():

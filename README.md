@@ -147,6 +147,9 @@
         data_df.to_csv('before_decoding.csv', index = False, mode = 'a', encoding = 'utf-8', header = False)
  ```
  - 특정 조건을 만족하는 값 저장 : df[df['컬럼명'] == '조건'] 
+ - df.concat() : dataframe으로 구성된 리스트들을 한번에 다 합쳐서 새로운 dataframe을 만들어주는 함수
+ - df.append() : 각 dataframe의 내부 method로 같은 column을 가진 dataframe을 끝에 붙여주는 함수
+ - concat vs append : concat의 속도가 더 빠름
  
 ## OpenCV 함수 정리
  - 이미지 읽기 : img = cv2.imread(filename)

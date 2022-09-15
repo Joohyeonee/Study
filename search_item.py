@@ -2,12 +2,23 @@ import pandas as pd
 
 def keyowrd_search(filepath):
     df = pd.read_csv(filepath, index_col = 0)
-    var = input()
+    var = []
+
+    print("top type : ", end = '')
+    var.append(input())
+    print("top color : ", end = '')
+    var.append(input())
+    print("bottom type : ", end = '')
+    var.append(input())
+    print("bottom color : ", end = '')
+    var.append(input())
+    
     for column in df:
-        if(df[df[column] == var].empty):
-            print("Skip")
-        else:
-            print(df[df[column] == var])
+        for i in range(len(var)):
+            if(df[df[column] == var[i]].empty):
+                print("Skip")
+            else:
+                print(df[df[column] == var[i]])
 
 def type_search(filepath):
     df = pd.read_csv(filepath, index_col = 0)

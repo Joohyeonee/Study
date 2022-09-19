@@ -48,6 +48,7 @@
 >> - key값만 리스트로 불러오기 : list(딕셔너리명.keys())
 >> - key로 value 얻기 : 딕셔너리명.get("key")
 >> - key값이 중복되면 하나를 제외한 나머지가 무시됨
+>> - list 중복 제거 : my_set = set(중복값이 있는 리스트명) my_list = list(my_set)
  
 3. shallow copy vs deep copy
  - shallow copy : 원본 객체를 바탕으로 새로운 객체를 생성한 뒤 내부 필드의 참조에 대해서는 원본 객체와 같은 필드의 참조를 바라보는 형태

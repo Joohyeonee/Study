@@ -265,7 +265,10 @@
  }
  ```
  
- ### SQLite 쿼리문 정리
+ ## Github 정리
+ - ! [rejected] main -> main (non-fast-forward) 에러나는 경우 : git push origin +main(+를 붙임)
+ 
+ ## SQLite 쿼리문 정리
  1. Insert
   - insert into [테이블명] (컬럼명1, 컬럼명2, ...) values (값1, 값2, ...)
  2. Delete

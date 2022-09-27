@@ -265,3 +265,9 @@
  }
  ```
  
+ ### SQLite 쿼리문 정리
+ 1. Insert
+  - insert into [테이블명] (컬럼명1, 컬럼명2, ...) values (값1, 값2, ...)
+ 2. Delete
+  - delete from [테이블명] where (조건)
+  - delete from [테이블명] : 해당 테이블 내 모든 데이터를 지우는 경우

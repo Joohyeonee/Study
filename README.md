@@ -8,7 +8,7 @@
 - 서버 상태 보기 : top
 - 디스크 용량 확인 : df -h
 - 파일 조회 : cat [파일이름]
-- 사용중인 포트 종료 : sudo lsof -t -i tcp:3333 | xargs kill -9
+- 사용중인 포트 종료 : sudo lsof -t -i tcp:[포트번호] | xargs kill -9
 
 ## docker 명령어 정리
 - 컨테이너 실행 : docker start [컨테이너명]

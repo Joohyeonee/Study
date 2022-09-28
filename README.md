@@ -277,7 +277,7 @@
  
  ## Django ORM 사용법
   - SQL Query를 통해 queryset을 받고싶을 때 : Model.objects.raw(query) 사용
-  >> raw query를 넘기면 raw query must include the primary key 에러 발생 시 해결 : 
+  >> raw query를 넘긴 후 raw query must include the primary key 에러 발생 시 해결 : 
   ``` 
   with connection.cursor() as cursor:
   	cursor.execute(raw_query)

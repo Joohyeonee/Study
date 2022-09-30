@@ -283,4 +283,9 @@
   	cursor.execute(raw_query)
   	row = cursor.fetchall()
  ```
-
+ - url로 parameter 전송하기
+ 1. path
+  - path("pages/<int:param1>/<int:param2>, views.function) 
+ 2. re_path
+  - re_path(r'^(?P<pk>[\w].확장자$', views.function)
+ 

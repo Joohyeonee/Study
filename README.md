@@ -127,7 +127,13 @@
  }
  ```
  
- 4. string 쪼개기 : split(구분자) 함수 사용 / split(".", maxsplit = 3) #.을 구분자로 하여 쪼개고, 최대 3개까지 쪼갬
+ 4. string 관련 함수
+  - 쪼개기: split(구분자) 함수 사용 / split(".", maxsplit = 3) #.을 구분자로 하여 쪼개고, 최대 3개까지 쪼갬
+  - 구분자 넣기 : [구분자].join(문자열 리스트) / new_str = '_'.join(str_list) 
+ 
+ 5. url encoding
+  - json 타입의 파라미터를 url로 변환할 때 : urllib.parse.urlencode() 사용
+  - url을 다시 json 타입으로 변환활 때 : urllib.parse.parse_qsl() 
  
  
 ## Python 라이브러리 정리

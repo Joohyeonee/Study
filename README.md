@@ -162,6 +162,9 @@
  - concat vs append : concat의 속도가 더 빠름
  - 중복값만 찾기 : df[df.duplicated()]
  - 중복값 제거 : df[~df.duplicated()]
+
+3. ffmpeg
+ - 영상 자르기 : ffmpeg -i [영상경로] -ss [자르기 시작할 시간(hh:mm:ss)] -to [자르기 끝낼 시간(hh:mm:ss)] -vcodec copy -acodec copy [자르는 영상 경로]
  
 ## OpenCV 함수 정리
  - 이미지 읽기 : img = cv2.imread(filename)

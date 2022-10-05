@@ -275,7 +275,9 @@
  ```
  
  ## Github 정리
- - ! [rejected] main -> main (non-fast-forward) 에러나는 경우 : git push origin +main(+를 붙임)
+ - ! [rejected] main -> main (non-fast-forward) 에러나는 경우 
+ >> 1. git pull origin master --allow-unrelated-histories (어긋난 커밋 pull 받음)
+ >> 2. git push origin +main(+를 붙임)
  
  ## SQLite 쿼리문 정리
  1. Insert

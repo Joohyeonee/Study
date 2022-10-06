@@ -285,6 +285,9 @@
  2. Delete
   - delete from [테이블명] where (조건)
   - delete from [테이블명] : 해당 테이블 내 모든 데이터를 지우는 경우
+ 3. 선행연산
+  - (select * from A) intersect (select * from B) : 괄호로 선행연산 불가능
+  - select * from(select * from A) intersect select * from(select * from B) : 선행연산 가능
  
  ## Django ORM 사용법
   - SQL Query를 통해 queryset을 받고싶을 때 : Model.objects.raw(query) 사용

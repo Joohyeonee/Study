@@ -8,6 +8,7 @@
 - 서버 상태 보기 : top
 - 디스크 용량 확인 : df -h
 - 파일 조회 : cat [파일이름]
+- 파일 수정 : vi [파일이름] > ESC > :wq(저장)
 - 사용중인 포트 종료 : sudo lsof -t -i tcp:[포트번호] | xargs kill -9
 
 ## docker 명령어 정리
@@ -277,7 +278,8 @@
  ## Github 정리
  - ! [rejected] main -> main (non-fast-forward) 에러나는 경우 
  >> 1. git pull origin master --allow-unrelated-histories (어긋난 커밋 pull 받음)
- >> 2. git push origin +main(+를 붙임)
+ >> 2. git push origin +main(+를 붙임) : 덮어쓰기됨
+ >> 3. git stash : 수정한 커밋하지 않고 임시 저장할 때 
  
  ## SQLite 쿼리문 정리
  1. Insert

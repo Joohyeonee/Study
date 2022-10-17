@@ -302,6 +302,8 @@
  - url로 parameter 전송하기
  1. path
   - path("pages/<int:param1>/<int:param2>, views.function) 
- 2. re_path
-  - re_path(r'^(?P<pk>[\w].확장자$', views.function)
- 
+ 2. urlencode 사용 : json을 url로 전송 후 decode 
+ urllib.parse.urlencode([json 데이터 경로])  <-> urllib.parse.parse_qsl(url)
+ ```
+ list(model.objects.all().values('fieldname'))[j]["fieldname"]
+ ```

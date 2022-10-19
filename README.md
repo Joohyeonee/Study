@@ -307,3 +307,5 @@
  ```
  list(model.objects.all().values('fieldname'))[j]["fieldname"]
  ```
+ ## react 설치 시 주의사항
+  - cannot find module react 또는 watch(errno:-28) 에러가 났을 때 npm clean-install

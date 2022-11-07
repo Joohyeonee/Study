@@ -307,7 +307,8 @@
  ```
  list(model.objects.all().values('fieldname'))[j]["fieldname"]
  ```
- ## react 설치 시 주의사항
+ ## react 정리
   - cannot find module react 또는 watch(errno:-28) 에러가 났을 때 npm clean-install
-  - useState() : user action을 통해 상태가 바뀌는 값을 반영하고 싶을 때 사용
+  - useState() : user action을 통해 상태가 바뀌는 값을 반영하고 싶을 때 사용 
   >> ex) const [modalIsOpen, setIsOpen] = React.useState(false);
+  - axios : HTTP 통신 요구사항을 사용하기 쉽게 설계한 compact 패키지(Promise API를 활용하는 HTTP 비동기 통신 라이브러리)

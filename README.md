@@ -22,6 +22,9 @@
 - 유사 터미널(실제 터미널 x) 할당 : docker run -t
 - 볼륨 마운트 : docker run -it -v [호스트 경로]:[컨테이너 경로]
 > -v /home/jhlee/workspace/metadata:/workspace/metadata_jhlee
+- 소스코드 다운로드 : COPY . .
+- 여러 개의 서로 다른 경로를 마운트할 때 : Makefile에서 docker build 시 --build-arg [argument 이름]=${위에서 지정한 경로에 해당하는 변수}
+> docker build --build-arg modelpath=$(MODEL_PATH)
 
 ## Python 정리
 1. json 로드

@@ -315,3 +315,8 @@
   - useState() : user action을 통해 상태가 바뀌는 값을 반영하고 싶을 때 사용 
   >> ex) const [modalIsOpen, setIsOpen] = React.useState(false);
   - axios : HTTP 통신 요구사항을 사용하기 쉽게 설계한 compact 패키지(Promise API를 활용하는 HTTP 비동기 통신 라이브러리)
+  
+## ffmpeg 정리
+ - 영상 자르기 : ffmpeg -i 원본파일 -ss 시작시간 -to 끝시간  출력파일
+ - 영상 메타정보 추출 : ffprobe 원본파일
+ - 영상 오디오 추출 : ffmpeg -i 원본파일 -vn -acodec copy 출력파일.aac 

@@ -316,4 +316,5 @@
 ## ffmpeg 정리
  - 영상 자르기 : ffmpeg -i 원본파일 -ss 시작시간 -to 끝시간  출력파일
  - 영상 메타정보 추출 : ffprobe -v quiet -print_format json -show_format -show_streams 파일이름.mp4 > 파일이름.json
- - 영상 오디오 추출 : ffmpeg -i 원본파일 -vn -acodec copy 출력파일.aac 
+ - 영상 오디오 추출 : ffmpeg -i 원본파일 -vn -acodec copy 출력파일.aac
+ - 싱크 옵션 : -vsync 0 -muxdelay0  -muxpreload 0 

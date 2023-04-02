@@ -10,6 +10,7 @@
 - 파일 조회 : cat [파일이름]
 - 파일 수정 : vi [파일이름] > ESC > :wq(저장)
 - 사용중인 포트 종료 : sudo lsof -t -i tcp:[포트번호] | xargs kill -9
+- 메모리 사용하고 있는 task 조회 : ps aux | grep [명령어 이름 ex> ffmpeg, python]
 
 ## docker 명령어 정리
 - 컨테이너 실행 : docker start [컨테이너명]
